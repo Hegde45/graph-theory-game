@@ -78,6 +78,8 @@ def main():
         cd = True
     if source == default_option:
         warning += w_o
+        if not cw:
+            warning += ", "
         if not cd or not cw:
             warning += ", "
         co = True
