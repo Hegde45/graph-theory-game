@@ -52,10 +52,11 @@ def main():
     """
     st.markdown(s, unsafe_allow_html=True)
 
-    st.title('Graph Theory')
+    st.title('Graph Theory', anchor=False)
 
     cities = load_cities()
     
+    st.sidebar.title("Options", anchor=False)
     source = st.sidebar.selectbox("Origin", (cities[0]), index=0)
     target = st.sidebar.selectbox("Destination", (cities[1]), index=0)
     weight = st.sidebar.selectbox("Weight", (default_option, 'Distance', 'AirTime'), index=0)
