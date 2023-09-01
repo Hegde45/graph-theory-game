@@ -73,12 +73,12 @@ def main():
         cw = True
     if target == default_option:
         warning += w_d
-        if cw == False:
+        if cw == True:
             warning += ", "
         cd = True
     if source == default_option:
         warning += w_o
-        if cd == False or cw == False:
+        if cd == True or cw == True:
             warning += ", "
         co = True
     if co or cd or cw:
