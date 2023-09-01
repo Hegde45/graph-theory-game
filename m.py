@@ -62,21 +62,25 @@ def main():
 
     warning = 'Select '
     warning2 = 'to find the shortest path'
-    w_o = 'Origin '
-    w_d = 'Destination '
+    w_o = 'Origin'
+    w_d = 'Destination'
     w_w = 'Weight '
     co = False
     cd = False
     cw = False
-    if source == default_option:
-        warning += w_o
-        co = True
-    if target == default_option:
-        warning += w_d
-        cd = True
     if weight == default_option:
         warning += w_w
         cw = True
+    if target == default_option:
+        warning += w_d
+        if not cw:
+            warning += ", "
+        cd = True
+    if source == default_option:
+        warning += w_o
+        if not cd or not cw:
+            warning += ", "
+        co = True
     if co or cd or cw:
         st.warning(warning + warning2)
 
