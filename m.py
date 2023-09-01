@@ -60,8 +60,25 @@ def main():
     target = st.sidebar.selectbox("Destination", (cities[1]), index=0)
     weight = st.sidebar.selectbox("Weight", (default_option, 'Distance', 'AirTime'), index=0)
 
-    if source == default_option or target == default_option or weight == default_option:
-        st.warning('Select Origin, Destination and Weight to find the shortest path')
+    warning = 'Select '
+    warning2 = 'to find the shortest path'
+    w_o = 'Origin '
+    w_d = 'Destination '
+    w_w = 'Weight '
+    co = False
+    cd = False
+    cw = False
+    if source == default_option:
+        warning += w_o
+        co = True
+    if target == default_option:
+        warning += w_d
+        cd = True
+    if weight == default_option:
+        warning += w_w
+        cw = True
+    if co or cd or cw:
+        st.warning(warning + warning2)
 
     items = load_graph()
     graph = items[0]
