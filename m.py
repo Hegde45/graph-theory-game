@@ -54,6 +54,9 @@ def main():
 
     st.title('Graph Theory')
 
+    if source != default_option and target != default_option and weight != default_option:
+        st.title('Fill source and target to find the shortest path')
+
     # st.selectbox(label, options, index=0, format_func=special_internal_function, key=None, help=None, on_change=None, args=None, kwargs=None, *, placeholder="Select...", disabled=False, label_visibility="visible")
 
     cities = load_cities()
