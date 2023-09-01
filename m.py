@@ -56,12 +56,12 @@ def main():
 
     cities = load_cities()
     
-    source = st.sidebar.selectbox("Source City", (cities[0]), index=0)
-    target = st.sidebar.selectbox("Target City", (cities[1]), index=0)
+    source = st.sidebar.selectbox("Origin", (cities[0]), index=0)
+    target = st.sidebar.selectbox("Destination", (cities[1]), index=0)
     weight = st.sidebar.selectbox("Weight", (default_option, 'Distance', 'AirTime'), index=0)
 
     if source == default_option or target == default_option or weight == default_option:
-        st.warning('Fill source and target to find the shortest path')
+        st.warning('Select Origin, Destinatio and Weight to find the shortest path')
 
     items = load_graph()
     graph = items[0]
